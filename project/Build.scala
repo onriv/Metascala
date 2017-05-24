@@ -1,16 +1,14 @@
 import sbt._
 import Keys._
 
-import sbtassembly.Plugin._
-import AssemblyKeys._
+import sbtassembly.AssemblyPlugin.autoImport._
 
 object Build extends sbt.Build{
 
   lazy val proj = Project(
     "SVM",
     file("."),
-    settings =
-      Defaults.defaultSettings ++ assemblySettings ++ Seq(
+    settings = Seq(
       organization  := "com.example",
       version       := "0.1",
       scalaVersion  := "2.10.2",
